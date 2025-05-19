@@ -1,132 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portofolio - [Nama Kamu]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      background: #d9f0ff;
+      color: #005f99;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #0a0f1c;
+      color: #00eaff;
+    }
+    canvas#stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      filter: drop-shadow(0 0 2px #00eaff);
+      transition: filter 0.3s;
+    }
+    body.dark canvas#stars {
+      filter: drop-shadow(0 0 6px #00eaff);
     }
     header {
-      background: rgba(0, 128, 255, 0.2);
-      padding: 2rem;
+      background: linear-gradient(135deg, rgba(0,234,255,0.2), rgba(15,133,255,0.15));
+      padding: 2.5rem 1rem;
       text-align: center;
-      border-bottom: 2px solid #00c3ff;
+      border-bottom: 2px solid #00aaff;
+      box-shadow: 0 0 20px #00aaff55;
+      position: relative;
     }
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
-      color: #00c3ff;
+      font-size: 2.7rem;
+      color: #007acc;
+      text-shadow: 0 0 8px #00aaff;
+      height: 3.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid #007acc;
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+      margin: 0 auto;
+      max-width: 14ch;
+    }
+    body.dark header h1 {
+      color: #00eaff;
+      border-right-color: #00eaff;
+      text-shadow: 0 0 12px #00eaff;
     }
     header p {
       font-style: italic;
-      color: #b0d9ff;
+      color: #004d66;
+      margin-top: 0.5rem;
+      transition: color 0.3s;
     }
+    body.dark header p {
+      color: #80eaff;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #a0d4ff;
+      padding: 0.7rem 1rem;
+      text-align: center;
+      z-index: 10;
+      border-bottom: 1px solid #007acc40;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    body.dark nav {
+      background: #101c2e;
+      border-color: #00aaff40;
+    }
+    nav a {
+      color: #004080;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    body.dark nav a {
+      color: #00eaff;
+    }
+    nav a:hover {
+      color: #007acc;
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 2rem;
+      padding: 3rem 1rem;
       animation: fadeIn 1s ease;
     }
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
     h2 {
-      border-left: 4px solid #00c3ff;
+      border-left: 5px solid #007acc;
       padding-left: 1rem;
-      margin-bottom: 1rem;
       font-size: 1.8rem;
-      color: #7ec9ff;
+      margin-bottom: 1.5rem;
+      color: #006699;
+      text-shadow: 0 0 4px #00aaff;
+      transition: color 0.3s;
+    }
+    body.dark h2 {
+      color: #00eaff;
+      text-shadow: 0 0 6px #00eaff;
     }
     .card {
-      background: rgba(255,255,255,0.05);
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
-      border: 1px solid #00c3ff30;
+      background: rgba(0,122,204,0.1);
+      padding: 1.7rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #00aaff25;
+      transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+      color: #004d66;
+    }
+    body.dark .card {
+      background: rgba(0,234,255,0.1);
+      color: #b0faff;
+      border-color: #00eaff55;
     }
     .card:hover {
-      transform: scale(1.03);
-      background: rgba(255,255,255,0.1);
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00aaff55;
+    }
+    .card h3 {
+      color: #007acc;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+    body.dark .card h3 {
+      color: #00eaff;
     }
     a {
-      color: #00c3ff;
-      text-decoration: none;
+      color: #007acc;
+      transition: color 0.3s;
+    }
+    body.dark a {
+      color: #00eaff;
     }
     a:hover {
-      text-decoration: underline;
+      color: #004080;
+    }
+    body.dark a:hover {
+      color: #80eaff;
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      border-top: 1px solid #00c3ff30;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #004d66;
+      border-top: 1px solid #00aaff25;
+      transition: color 0.3s, border-color 0.3s;
     }
+    body.dark footer {
+      color: #80eaff;
+      border-color: #00eaff55;
+    }
+
+    button#toggle-theme {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007acc;
+      color: #d9f0ff;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 8px #007acc;
+      transition: background 0.3s, box-shadow 0.3s;
+      z-index: 15;
+    }
+    button#toggle-theme:hover {
+      background: #005f99;
+      box-shadow: 0 0 15px #005f99;
+    }
+    body.dark button#toggle-theme {
+      background: #00eaff;
+      color: #00334d;
+      box-shadow: 0 0 10px #00eaff;
+    }
+    body.dark button#toggle-theme:hover {
+      background: #00c3ff;
+      box-shadow: 0 0 18px #00c3ff;
+    }
+
+    button#download-cv {
+      display: inline-block;
+      background: #007acc;
+      color: #d9f0ff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 8px #007acc;
+      transition: background 0.3s, box-shadow 0.3s;
+      margin: 1rem auto 3rem;
+      display: block;
+      text-align: center;
+      max-width: 180px;
+      user-select: none;
+    }
+    button#download-cv:hover {
+      background: #005f99;
+      box-shadow: 0 0 15px #005f99;
+    }
+    body.dark button#download-cv {
+      background: #00eaff;
+      color: #00334d;
+      box-shadow: 0 0 10px #00eaff;
+    }
+    body.dark button#download-cv:hover {
+      background: #00c3ff;
+      box-shadow: 0 0 18px #00c3ff;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 14ch }
+    }
+    @keyframes blink-caret {
+      50% { border-color: transparent }
+      100% { border-color: #007acc }
+    }
+    body.dark @keyframes blink-caret {
+      50% { border-color: transparent }
+      100% { border-color: #00eaff }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      button#download-cv {
+        max-width: 140px;
+        padding: 0.6rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>[Nama Kamu]</h1>
-    <p>👨‍💻 Web Developer | 🚀 Tech Enthusiast | 🎨 UI Designer</p>
-  </header>
 
-  <div class="container">
-    <section>
-      <h2>🧠 Tentang Saya</h2>
-      <div class="card">
-        <p>Saya adalah pengembang web yang berfokus pada pengalaman pengguna dan efisiensi sistem. Saya senang bereksperimen dengan desain dan teknologi baru untuk menciptakan solusi kreatif.</p>
-      </div>
-    </section>
+<canvas id="stars"></canvas>
 
-    <section>
-      <h2>🛠️ Keahlian</h2>
-      <div class="card">
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React, TailwindCSS, Node.js</li>
-          <li>UI/UX Design dengan Figma</li>
-          <li>Git & GitHub</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>📁 Proyek Unggulan</h2>
-      <div class="card">
-        <h3><a href="https://github.com/theofsp" target="_blank">Dashboard Pelacakan Logistik</a></h3>
-        <p>Web monitoring pengiriman dengan integrasi Excel Online, auto-refresh data, dan tampilan interaktif.</p>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/theofsp" target="_blank">Sistem Payroll Kurir</a></h3>
-        <p>Otomatisasi rekap payroll mingguan dan sistem validasi SLA pengiriman berbasis Google Sheet & Lark.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>📫 Kontak</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:kamu@example.com">kamu@example.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/kamu" target="_blank">linkedin.com/in/kamu</a></p>
-        <p>GitHub: <a href="https://github.com/theofsp" target="_blank">github.com/theofsp</a></p>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    © 2025 [Nama Kamu] — Dibuat dengan 💙 GitHub Pages
-  </footer>
-</body>
-</html>
+<header>
+  <h1>[Nama Kamu]</h1>
+  <p>🌐
