@@ -1,266 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio - [Nama Kamu]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #d9f0ff;
-      color: #005f99;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark {
-      background: #0a0f1c;
-      color: #00eaff;
-    }
-    canvas#stars {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      filter: drop-shadow(0 0 2px #00eaff);
-      transition: filter 0.3s;
-    }
-    body.dark canvas#stars {
-      filter: drop-shadow(0 0 6px #00eaff);
-    }
-    header {
-      background: linear-gradient(135deg, rgba(0,234,255,0.2), rgba(15,133,255,0.15));
-      padding: 2.5rem 1rem;
-      text-align: center;
-      border-bottom: 2px solid #00aaff;
-      box-shadow: 0 0 20px #00aaff55;
-      position: relative;
-    }
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.7rem;
-      color: #007acc;
-      text-shadow: 0 0 8px #00aaff;
-      height: 3.5rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 0.15em solid #007acc;
-      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-      margin: 0 auto;
-      max-width: 14ch;
-    }
-    body.dark header h1 {
-      color: #00eaff;
-      border-right-color: #00eaff;
-      text-shadow: 0 0 12px #00eaff;
-    }
-    header p {
-      font-style: italic;
-      color: #004d66;
-      margin-top: 0.5rem;
-      transition: color 0.3s;
-    }
-    body.dark header p {
-      color: #80eaff;
-    }
+  <p>🌐 Data & Analytics Enthusiast | Excel & Database | Insight-Driven Decision Maker</p>
+</header>
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: #a0d4ff;
-      padding: 0.7rem 1rem;
-      text-align: center;
-      z-index: 10;
-      border-bottom: 1px solid #007acc40;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    body.dark nav {
-      background: #101c2e;
-      border-color: #00aaff40;
-    }
-    nav a {
-      color: #004080;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    body.dark nav a {
-      color: #00eaff;
-    }
-    nav a:hover {
-      color: #007acc;
-    }
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 3rem 1rem;
-      animation: fadeIn 1s ease;
-    }
-    section {
-      margin-bottom: 4rem;
-    }
-    h2 {
-      border-left: 5px solid #007acc;
-      padding-left: 1rem;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #006699;
-      text-shadow: 0 0 4px #00aaff;
-      transition: color 0.3s;
-    }
-    body.dark h2 {
-      color: #00eaff;
-      text-shadow: 0 0 6px #00eaff;
-    }
-    .card {
-      background: rgba(0,122,204,0.1);
-      padding: 1.7rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      border: 1px solid #00aaff25;
-      transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
-      color: #004d66;
-    }
-    body.dark .card {
-      background: rgba(0,234,255,0.1);
-      color: #b0faff;
-      border-color: #00eaff55;
-    }
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 20px #00aaff55;
-    }
-    .card h3 {
-      color: #007acc;
-      margin-bottom: 0.5rem;
-      transition: color 0.3s;
-    }
-    body.dark .card h3 {
-      color: #00eaff;
-    }
-    a {
-      color: #007acc;
-      transition: color 0.3s;
-    }
-    body.dark a {
-      color: #00eaff;
-    }
-    a:hover {
-      color: #004080;
-    }
-    body.dark a:hover {
-      color: #80eaff;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #004d66;
-      border-top: 1px solid #00aaff25;
-      transition: color 0.3s, border-color 0.3s;
-    }
-    body.dark footer {
-      color: #80eaff;
-      border-color: #00eaff55;
-    }
+<div class="container">
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a Data & Analytics Assistant Manager with solid experience in Excel-based reporting and analysis.
+        Currently expanding my skillset to include database querying and data automation, aiming to enable faster
+        and more scalable data-driven decision-making in operational environments.
+      </p>
+    </div>
+  </section>
 
-    button#toggle-theme {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #007acc;
-      color: #d9f0ff;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 8px #007acc;
-      transition: background 0.3s, box-shadow 0.3s;
-      z-index: 15;
-    }
-    button#toggle-theme:hover {
-      background: #005f99;
-      box-shadow: 0 0 15px #005f99;
-    }
-    body.dark button#toggle-theme {
-      background: #00eaff;
-      color: #00334d;
-      box-shadow: 0 0 10px #00eaff;
-    }
-    body.dark button#toggle-theme:hover {
-      background: #00c3ff;
-      box-shadow: 0 0 18px #00c3ff;
-    }
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Assistant Manager - Data & Analytics</h3>
+      <p><strong>Courier Logistics Company</strong> | 2021 - Present</p>
+      <ul>
+        <li>Led analytics efforts to monitor courier performance and optimize delivery productivity.</li>
+        <li>Automated reporting using Excel and macros to reduce manual work by 40%.</li>
+        <li>Collaborated with Tech team to define data requirements and improve export capabilities.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Senior Data Analyst</h3>
+      <p><strong>Retail Chain</strong> | 2018 - 2021</p>
+      <ul>
+        <li>Developed dashboards and ad hoc reports using advanced Excel functions and Power Query.</li>
+        <li>Analyzed historical data to provide actionable insights for inventory and sales strategies.</li>
+      </ul>
+    </div>
+  </section>
 
-    button#download-cv {
-      display: inline-block;
-      background: #007acc;
-      color: #d9f0ff;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 8px #007acc;
-      transition: background 0.3s, box-shadow 0.3s;
-      margin: 1rem auto 3rem;
-      display: block;
-      text-align: center;
-      max-width: 180px;
-      user-select: none;
-    }
-    button#download-cv:hover {
-      background: #005f99;
-      box-shadow: 0 0 15px #005f99;
-    }
-    body.dark button#download-cv {
-      background: #00eaff;
-      color: #00334d;
-      box-shadow: 0 0 10px #00eaff;
-    }
-    body.dark button#download-cv:hover {
-      background: #00c3ff;
-      box-shadow: 0 0 18px #00c3ff;
-    }
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <ul>
+        <li>📊 Advanced Excel (Pivot Tables, Power Query, VBA)</li>
+        <li>🛢️ Basic SQL & Database Understanding</li>
+        <li>📈 Data Visualization (Power BI, Excel Charts)</li>
+        <li>🧠 Analytical Thinking & Operational Insights</li>
+        <li>🤝 Cross-functional Collaboration with Tech/Product teams</li>
+      </ul>
+    </div>
+  </section>
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 14ch }
-    }
-    @keyframes blink-caret {
-      50% { border-color: transparent }
-      100% { border-color: #007acc }
-    }
-    body.dark @keyframes blink-caret {
-      50% { border-color: transparent }
-      100% { border-color: #00eaff }
-    }
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>📧 Email: your.email@example.com</p>
+      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p>📍 Location: Jakarta, Indonesia</p>
+    </div>
+  </section>
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      h2 { font-size: 1.5rem; }
-      button#download-cv {
-        max-width: 140px;
-        padding: 0.6rem 1rem;
+  <button id="download-cv" onclick="window.open('your-cv-link.pdf', '_blank')">Download CV</button>
+</div>
+
+<footer>
+  &copy; 2025 [Your Name]. All rights reserved.
+</footer>
+
+<button id="toggle-theme">Toggle Theme</button>
+
+<script>
+  // Toggle dark mode
+  document.getElementById('toggle-theme').addEventListener('click', function () {
+    document.body.classList.toggle('dark');
+  });
+
+  // Simple starfield background (optional enhancement)
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = Array.from({ length: 100 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5,
+      velocity: Math.random() * 0.5 + 0.2
+    }));
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00eaff';
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fill();
+      star.y += star.velocity;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
       }
-    }
-  </style>
-</head>
-<body>
+    });
+    requestAnimationFrame(drawStars);
+  }
 
-<canvas id="stars"></canvas>
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  drawStars();
+</script>
 
-<header>
-  <h1>[Nama Kamu]</h1>
-  <p>🌐
+</body>
+</html>
