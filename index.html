@@ -1,17 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard Data Operasional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio - [Nama Kamu]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      background: rgba(0, 128, 255, 0.2);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #00c3ff;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00c3ff;
+    }
+    header p {
+      font-style: italic;
+      color: #b0d9ff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeIn 1s ease;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-left: 4px solid #00c3ff;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #7ec9ff;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      border: 1px solid #00c3ff30;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      background: rgba(255,255,255,0.1);
+    }
+    a {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #00c3ff30;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <h1>Data Realtime dari Excel Online</h1>
+  <header>
+    <h1>[Nama Kamu]</h1>
+    <p>👨‍💻 Web Developer | 🚀 Tech Enthusiast | 🎨 UI Designer</p>
+  </header>
 
-  <iframe 
-    width="700" 
-    height="900" 
-    frameborder="0" 
-    scrolling="no" 
-    src="https://61nngljuq69wkvzlaiog9kkphca.sharepoint.com/sites/Operations/_layouts/15/Doc.aspx?sourcedoc={8be926f7-041a-4675-8056-541d43e7b82e}&action=embedview&wdAllowInteractivity=False&Item=DataBase2025&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
-  </iframe>
+  <div class="container">
+    <section>
+      <h2>🧠 Tentang Saya</h2>
+      <div class="card">
+        <p>Saya adalah pengembang web yang berfokus pada pengalaman pengguna dan efisiensi sistem. Saya senang bereksperimen dengan desain dan teknologi baru untuk menciptakan solusi kreatif.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🛠️ Keahlian</h2>
+      <div class="card">
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>React, TailwindCSS, Node.js</li>
+          <li>UI/UX Design dengan Figma</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>📁 Proyek Unggulan</h2>
+      <div class="card">
+        <h3><a href="https://github.com/theofsp" target="_blank">Dashboard Pelacakan Logistik</a></h3>
+        <p>Web monitoring pengiriman dengan integrasi Excel Online, auto-refresh data, dan tampilan interaktif.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/theofsp" target="_blank">Sistem Payroll Kurir</a></h3>
+        <p>Otomatisasi rekap payroll mingguan dan sistem validasi SLA pengiriman berbasis Google Sheet & Lark.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📫 Kontak</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:kamu@example.com">kamu@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/kamu" target="_blank">linkedin.com/in/kamu</a></p>
+        <p>GitHub: <a href="https://github.com/theofsp" target="_blank">github.com/theofsp</a></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 [Nama Kamu] — Dibuat dengan 💙 GitHub Pages
+  </footer>
 </body>
 </html>
